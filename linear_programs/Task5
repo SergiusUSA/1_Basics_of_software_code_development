@@ -1,0 +1,37 @@
+/*
+  5. Дано натуральное число Т, которое представляет длительность прошедшего времени в секундах. Вывести
+  данное значение длительности в часах, минутах и секундах в следующей форме:
+  ННч ММмин SSc.
+*/
+
+
+import java.util.Scanner;
+
+public class Task5 {
+    public static void main(String[] args) {
+        System.out.println("Введите количество секунд");
+
+        Scanner console = new Scanner(System.in);
+
+        int number = 0;
+        boolean flag=false;
+
+        do {
+            if (console.hasNextInt()) {
+                number = console.nextInt();
+                if (0 <= number) {
+                    flag = true;
+                } else {System.out.println("Вы ввели не валидное значение");}
+            } else {
+                System.out.println("Вы ввели не валидное значение");
+                console.next();
+            }
+        } while (!flag);
+
+        int hour = number /3600;
+        int minute = number / 60 % 60;
+        int sekund = number % 60;
+
+        System.out.println(number + " секунд  это - " + hour + " ч. " + minute + " мин. " + sekund + " сек.");
+    }
+}
