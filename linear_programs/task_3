@@ -1,0 +1,23 @@
+//Вычислить значение выражения по формуле (все переменные принимают действительные значения):
+(sin x + cos y)/(cos x - sin y)* tg xy
+
+import java.util.Scanner;
+
+public class task_3 {
+    public static void main(String[] args)
+    {
+        System.out.println("Введите число. \n Напоминаем три цифровых разряда в дробной и целой частях");
+
+        Scanner console = new Scanner(System.in);
+
+        while (!(console.hasNextDouble()))
+        { System.out.println("Вы ввели не соответствующее значение");
+            console.next();
+        }
+        double x = console.nextDouble();
+        System.out.println("Значение x = " + x);
+       
+        double z =( (Math.sin(x) + Math.cos(y))/(Math.cos(x) - Math.sin(y)) * Math.tan(x*y) );
+        System.out.println("Значение выражения  " + String.format ("%f", z));
+    }
+}
